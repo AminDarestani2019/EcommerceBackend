@@ -1,0 +1,24 @@
+﻿
+using FluentValidation.Results;
+
+namespace Domain.Exceptions
+{
+    public class ValidationEntityException : BaseException
+    {
+        public ValidationEntityException(List<string> messages) : base(messages)
+        {
+        }
+
+        public ValidationEntityException(string message) : base(message)
+        {
+        }
+        public ValidationEntityException():base("خطایی رخ داده است. لطفا مجددا تلاش کنید")
+        {
+            
+        }
+        public ValidationEntityException(IEnumerable<ValidationFailure> validationFailures):base(validationFailures)
+        {
+            
+        }
+    }
+}
