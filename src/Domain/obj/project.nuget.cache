@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+nQiCJHD39a9SMGTKdBIf0cYdV4D12QDgc2V1MXASjE5WObjp5WrKcUH0EWWUq4B9c5dHsDvSZCzIUscVkpNcg==",
+  "dgSpecHash": "wZ9PGWpk6IFHDqgKsb8upEpzrdX1l6K8sWRLUe+exdrK72m3mFONg+C9VKR59ROij0HgU4+jAlAnFX81ggu+4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.3\\microsoft.aspnetcore.cryptography.internal.8.0.3.nupkg.sha512",

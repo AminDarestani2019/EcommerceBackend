@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WljafxwosgEeEo6C2urBcWZFcrShoy+m+l5X8t1lZAaPmCOO9QZ1P738/QOOPTHPqHUKvk/HXTdn6aei1lOiGQ==",
+  "dgSpecHash": "zPDyuDWCE7LnufLXJGKHYDRpjVg9WPKk2sl7elgj86DxOwhUqnHzy8cENc9ZFLlWFsfjSYXNRFJgkn/cOQo4nw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\Web.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

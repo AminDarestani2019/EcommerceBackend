@@ -12020,11 +12020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12041,8 +12041,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\nginx\\EcommerceBackend\\src\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
