@@ -2,6 +2,7 @@
 using Domain.Exceptions;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.SeedData;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Extensions;
@@ -28,9 +29,13 @@ namespace Web
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(
+                    policy
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .WithOrigins(
                         configuration["CorsAddress:AddressHttp"], 
-                        configuration["CorsAddress:AddressHttps"]);
+                        configuration["CorsAddress:AddressHttps"])
+                    .AllowCredentials();
                 });
             });
             //IhttpContext Accessor
@@ -64,6 +69,7 @@ namespace Web
 
         public static async Task<IApplicationBuilder> AddWebAppService(this WebApplication app)
         {
+            app.UseHttpsRedirection();
             app.UseMiddleware<ExceptionHandlerMiddleware>();
             app.UseStaticFiles();
             //get service
@@ -86,12 +92,23 @@ namespace Web
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwaggerDocumentation();
+                app.UseDeveloperExceptionPage();    
+            }
+            else 
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
             app.UseRouting();
             //CORS
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             app.MapControllers();
 
