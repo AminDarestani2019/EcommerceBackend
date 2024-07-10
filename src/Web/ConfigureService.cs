@@ -105,11 +105,6 @@ namespace Web
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
-
             app.MapControllers();
 
             await app.RunAsync();
