@@ -21,14 +21,19 @@ namespace Web
             builder.Services.AddControllers();
 
             // Configure Kestrel to use the specified certificate
+
+            string certPath = Path.Combine("/app", "saelectronics.pfx");
+
+            if (!File.Exists(certPath))
+            {
+                throw new FileNotFoundException("The certificate file was not found.", certPath);
+            }
+
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
                 serverOptions.ConfigureHttpsDefaults(listenOptions =>
                 {
-                    listenOptions.ServerCertificate = new X509Certificate2(
-                        Path.Combine("/app", "saelectronics.pfx"),
-                        "Sha@341401"
-                    );
+                    listenOptions.ServerCertificate = new X509Certificate2(certPath,"Sha@341401");
                 });
             });
 
