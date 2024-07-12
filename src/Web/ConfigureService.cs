@@ -36,12 +36,11 @@ namespace Web
             var port = 5085;
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
-                var certificate = new X509Certificate2(certPath, "Sha@341401");
                 serverOptions.Listen(IPAddress.Any, port, listenOptions => {
                     // Enable support for HTTP1 and HTTP2 (required if you want to host gRPC endpoints)
                     listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                     // Configure Kestrel to use the loaded certificate for hosting HTTPS
-                    listenOptions.UseHttps(certificate);
+                    listenOptions.UseHttps(certPath, "Sha@341401");
                 });
             });
 
