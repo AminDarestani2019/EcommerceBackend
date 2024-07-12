@@ -2,12 +2,13 @@
 using Domain.Exceptions;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.SeedData;
-using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 using Web.Extensions;
 using Web.Middleware;
 using Web.Services;
+
 
 namespace Web
 {
@@ -18,6 +19,18 @@ namespace Web
         {
             // Add services to the container.
             builder.Services.AddControllers();
+
+            // Configure Kestrel to use the specified certificate
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.ConfigureHttpsDefaults(listenOptions =>
+                {
+                    listenOptions.ServerCertificate = new X509Certificate2(
+                        Path.Combine("/app", "saelectronics.pfx"),
+                        "Sha@341401"
+                    );
+                });
+            });
 
             ApiBehaviourOptions(builder);
 

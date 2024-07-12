@@ -4,7 +4,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 5085
+
+# Add this line to copy the PFX file
+COPY saelectronics.pfx /app/saelectronics.pfx
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
