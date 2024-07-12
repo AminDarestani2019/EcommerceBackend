@@ -3,7 +3,10 @@ using Domain.Exceptions;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.SeedData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using Web.Extensions;
 using Web.Middleware;
@@ -29,11 +32,16 @@ namespace Web
                 throw new FileNotFoundException("The certificate file was not found.", certPath);
             }
 
+
+            var port = 5085;
             builder.WebHost.ConfigureKestrel(serverOptions =>
             {
-                serverOptions.ConfigureHttpsDefaults(listenOptions =>
-                {
-                    listenOptions.ServerCertificate = new X509Certificate2(certPath,"Sha@341401");
+                var certificate = new X509Certificate2(certPath, "Sha@341401");
+                serverOptions.Listen(IPAddress.Any, port, listenOptions => {
+                    // Enable support for HTTP1 and HTTP2 (required if you want to host gRPC endpoints)
+                    listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                    // Configure Kestrel to use the loaded certificate for hosting HTTPS
+                    listenOptions.UseHttps(certificate);
                 });
             });
 
