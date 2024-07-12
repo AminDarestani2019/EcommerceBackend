@@ -22,7 +22,7 @@ namespace Web
 
             // Configure Kestrel to use the specified certificate
 
-            string certPath = Path.Combine("/app", "saelectronics.pfx");
+            string certPath ="saelectronics.pfx";
 
             if (!File.Exists(certPath))
             {
