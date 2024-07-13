@@ -17,6 +17,9 @@ COPY ["src/Infrastructure/Infrastructure.csproj", "src/Infrastructure/"]
 COPY ["src/Application/Application.csproj", "src/Application/"]
 COPY ["src/Domain/Domain.csproj", "src/Domain/"]
 
+RUN dotnet dev-certs https --clean && dotnet dev-certs https --export-path /app/cert.pfx -p Sha@341401
+RUN chmod 644 /app/cert.pfx
+
 RUN dotnet restore "src/Web/Web.csproj"
 COPY . .
 RUN dotnet build "src/Web/Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
