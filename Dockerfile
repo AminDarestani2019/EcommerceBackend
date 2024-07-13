@@ -31,4 +31,11 @@ RUN dotnet publish "src/Web/Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=https://+:5085;http://+:80
+ENV ASPNETCORE_HTTPS_PORT=5085
+ENV ASPNETCORE_Kestrel__Certificates__Default__Password="Sha@341401"
+ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert.pfx
+
 ENTRYPOINT ["dotnet", "Web.dll","--environment = Development"]
