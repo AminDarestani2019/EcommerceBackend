@@ -4,10 +4,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /app
-EXPOSE 5085
-
-# Add this line to copy the PFX file
-COPY saelectronics.pfx /app/saelectronics.pfx
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -16,9 +13,6 @@ COPY ["src/Web/Web.csproj", "src/Web/"]
 COPY ["src/Infrastructure/Infrastructure.csproj", "src/Infrastructure/"]
 COPY ["src/Application/Application.csproj", "src/Application/"]
 COPY ["src/Domain/Domain.csproj", "src/Domain/"]
-
-RUN dotnet dev-certs https --clean && dotnet dev-certs https --export-path /app/cert.pfx -p Sha@341401
-RUN chmod 644 /app/cert.pfx
 
 RUN dotnet restore "src/Web/Web.csproj"
 COPY . .
@@ -31,11 +25,4 @@ RUN dotnet publish "src/Web/Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
-ENV ASPNETCORE_ENVIRONMENT=Development
-ENV ASPNETCORE_URLS=https://+:5085;http://+:80
-ENV ASPNETCORE_HTTPS_PORT=5085
-ENV ASPNETCORE_Kestrel__Certificates__Default__Password="Sha@341401"
-ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert.pfx
-
 ENTRYPOINT ["dotnet", "Web.dll","--environment = Development"]

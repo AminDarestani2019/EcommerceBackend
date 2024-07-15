@@ -859,11 +859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code1\\EcommerceBackend\\src\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code1\\EcommerceBackend\\src\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code1\\EcommerceBackend\\src\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,13 +3,10 @@ using Domain.Exceptions;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.SeedData;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
 using Web.Extensions;
 using Web.Middleware;
 using Web.Services;
-
 
 namespace Web
 {
@@ -21,27 +18,6 @@ namespace Web
             // Add services to the container.
             builder.Services.AddControllers();
 
-            // Configure Kestrel to use the specified certificate
-
-            string certPath ="/app/cert.pfx";
-
-            if (!File.Exists(certPath))
-            {
-                throw new FileNotFoundException("The certificate file was not found.", certPath);
-            }
-
-
-            var port = 5085;
-            builder.WebHost.ConfigureKestrel(serverOptions =>
-            {
-                serverOptions.Listen(IPAddress.Any, port, listenOptions => {
-                    // Enable support for HTTP1 and HTTP2 (required if you want to host gRPC endpoints)
-                    listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-                    // Configure Kestrel to use the loaded certificate for hosting HTTPS
-                    listenOptions.UseHttps(certPath, "Sha@341401");
-                });
-            });
-
             ApiBehaviourOptions(builder);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -52,13 +28,9 @@ namespace Web
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .WithOrigins(
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(
                         configuration["CorsAddress:AddressHttp"], 
-                        configuration["CorsAddress:AddressHttps"])
-                    .AllowCredentials();
+                        configuration["CorsAddress:AddressHttps"]);
                 });
             });
             //IhttpContext Accessor
@@ -92,7 +64,6 @@ namespace Web
 
         public static async Task<IApplicationBuilder> AddWebAppService(this WebApplication app)
         {
-            app.UseHttpsRedirection();
             app.UseMiddleware<ExceptionHandlerMiddleware>();
             app.UseStaticFiles();
             //get service
@@ -115,12 +86,6 @@ namespace Web
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwaggerDocumentation();
-                app.UseDeveloperExceptionPage();    
-            }
-            else 
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
             }
             app.UseRouting();
             //CORS
