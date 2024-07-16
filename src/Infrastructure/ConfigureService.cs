@@ -1,4 +1,6 @@
-﻿#define LocalConnection
+﻿//#define PrivateConnection
+#define LocalConnection
+//#define PublicConnection
 
 using Application.Contracts;
 using Application.Interfaces;
@@ -19,13 +21,29 @@ namespace Infrastructure
         {
             services.AddDbContext<ApplicationDbContext>(option =>
             {
+
+#if PublicConnection
+                option.UseSqlServer(configuration.GetConnectionString("PublicConnection"));
+#elif PrivateConnection
+                option.UseSqlServer(configuration.GetConnectionString("PrivateConnection"));
+#elif LocalConnection
                 option.UseSqlServer(configuration.GetConnectionString("LocalConnection"));
+#endif
+
             });
             //connection string redis
             services.AddSingleton<IConnectionMultiplexer>(opt =>
             {
+#if PublicConnection
+                var options = ConfigurationOptions.Parse(configuration.GetConnectionString("RedisPublic") ?? string.Empty, true);
+                return ConnectionMultiplexer.Connect(options);
+#elif PrivateConnection
+                var options = ConfigurationOptions.Parse(configuration.GetConnectionString("RedisPrivate") ?? string.Empty, true);
+                return ConnectionMultiplexer.Connect(options);
+#elif LocalConnection
                 var options = ConfigurationOptions.Parse(configuration.GetConnectionString("RedisLocal") ?? string.Empty, true);
                 return ConnectionMultiplexer.Connect(options);
+#endif
             });
          
             //Identity

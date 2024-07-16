@@ -1,52 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\HonorX8A.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\HonorX8A.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\googlepixel.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\googlepixel.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\honorx6a.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\honorx6a.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\htc-U24_Pro_01_610_710.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\htc-U24_Pro_01_610_710.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\htcu23.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\htcu23.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\image.jpg",
+      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code\\Backend\\Store\\Src\\Web\\wwwroot\\images\\Products\\image.jpg",
       "PackagePath": "staticwebassets\\images\\Products\\image.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\iphone13.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\iphone13.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\iphone15Promax.jfif",
-      "PackagePath": "staticwebassets\\images\\Products\\iphone15Promax.jfif"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\nubia.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\nubia.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\pocom6.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\pocom6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\s24.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\s24.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup\\Backend\\Store\\src\\Web\\wwwroot\\images\\Products\\xiaomi14.jpg",
-      "PackagePath": "staticwebassets\\images\\Products\\xiaomi14.jpg"
     },
     {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props",

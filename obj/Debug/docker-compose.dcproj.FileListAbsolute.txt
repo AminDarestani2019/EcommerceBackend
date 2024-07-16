@@ -1,0 +1,2 @@
+C:\Users\ASUS\Desktop\JavaScriptTutorial\StoreProject\Code\Backend\Store\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\JavaScriptTutorial\StoreProject\Code Backup2\Code Backup\Backend\Store\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
