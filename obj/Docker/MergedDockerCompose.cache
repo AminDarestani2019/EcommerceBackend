@@ -1,0 +1,47 @@
+name: dockercompose16486115251026051087
+services:
+  basketdb:
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+    container_name: basketdb
+    image: redis:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 6379
+        published: "6379"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: redis-data
+        target: /data
+        volume: {}
+  redis-commander:
+    container_name: redis-commander
+    depends_on:
+      basketdb:
+        condition: service_started
+        required: true
+    environment:
+      HTTP-USER: root
+      HTTP_PASSWORD: secret
+      REDIS_HOSTS: local:basketdb:6379
+    image: rediscommander/redis-commander:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8081
+        published: "8081"
+        protocol: tcp
+    restart: always
+networks:
+  default:
+    name: dockercompose16486115251026051087_default
+volumes:
+  redis-data:
+    name: dockercompose16486115251026051087_redis-data

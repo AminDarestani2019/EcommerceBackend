@@ -12020,11 +12020,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup2\\Code Backup\\Backend\\Store\\Src\\Web\\Web.csproj",
       "projectName": "Web",
       "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup2\\Code Backup\\Backend\\Store\\Src\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup2\\Code Backup\\Backend\\Store\\Src\\Web\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Web\\Web.csproj",
+      "projectName": "Web",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Web\\Web.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Web\\obj\\",
+>>>>>>> 03a521acceed4344b9f34bb7068f39421ee05a89
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12041,8 +12049,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup2\\Code Backup\\Backend\\Store\\src\\Infrastructure\\Infrastructure.csproj": {
               "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Code Backup2\\Code Backup\\Backend\\Store\\src\\Infrastructure\\Infrastructure.csproj"
+=======
+            "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\JavaScriptTutorial\\StoreProject\\Backend\\src\\Infrastructure\\Infrastructure.csproj"
+>>>>>>> 03a521acceed4344b9f34bb7068f39421ee05a89
             }
           }
         }
